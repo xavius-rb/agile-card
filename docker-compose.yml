@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    env_file:
+      - .app.env
+    volumes:
+      - "postgres:/var/lib/postgresql/data:cached"
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+    env_file:
+      - .app.env
+
+  # your app image
+  app: &app_base
+    build: .
+    command: bin/bundle exec puma -C config/puma.rb
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+      - yarn:/home/node/.cache/yarn
+      - bundle:/usr/local/bundle
+    env_file:
+      - .app.env
+    tty: true
+    stdin_open: true
+
+  worker:
+    <<: *app_base
+    command: bin/bundle exec sidekiq
+    ports: []
+    entrypoint: []
+
+volumes:
+  yarn:
+  bundle:
+  postgres:
