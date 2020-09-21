@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cards
   resources :projects
   get 'home', to: 'home#index', as: 'home'
   root 'home#index'
