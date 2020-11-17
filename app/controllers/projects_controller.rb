@@ -1,9 +1,11 @@
 class ProjectsController < ApplicationController
+  #include Xavius::Controller # FIX DESTROY
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
+    console
     @projects = Project.all
   end
 

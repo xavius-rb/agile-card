@@ -27,6 +27,7 @@ services:
       - .:/usr/src/app
       - yarn:/home/node/.cache/yarn
       - bundle:/usr/local/bundle
+      - /Users/emersonx/Code/xavius:/root/gems/xavius
     env_file:
       - .app.env
     tty: true

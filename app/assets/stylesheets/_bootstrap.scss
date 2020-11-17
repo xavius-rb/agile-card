@@ -1,0 +1,22 @@
+$base-color: #ff9100;
+$body-bg: rgb(248, 241, 241);
+$body-color: #111;
+
+$light: tint($base-color, 80%);
+$dark: shade($base-color, 60%);
+
+$theme-colors: (
+  "primary": $base-color,
+  "secondary": $dark,
+);
+
+$table-header-bg: tint($dark, 64%);
+$modal-header-bg: $table-header-bg;
+$card-header-bg: $light;
+
+$gray-300: $base-color;
+$gray-200: $table-header-bg;
+$table-accent-bg: $card-header-bg;
+
+$input-border-radius: 18px;
+$btn-border-radius: 0.35rem;
