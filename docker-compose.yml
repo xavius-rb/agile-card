@@ -30,6 +30,8 @@ services:
       - /Users/emersonx/Code/xavius:/root/gems/xavius
     env_file:
       - .app.env
+    environment:
+      - ENABLE_BOOTSNAP=true
     tty: true
     stdin_open: true
 
@@ -37,7 +39,8 @@ services:
     <<: *app_base
     command: bin/bundle exec sidekiq
     ports: []
-    entrypoint: []
+    environment:
+      - ENABLE_BOOTSNAP=false
 
 volumes:
   yarn:

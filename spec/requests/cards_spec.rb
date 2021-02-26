@@ -16,11 +16,11 @@ RSpec.describe "/cards", type: :request do
   # Card. As you add validations to Card, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:card)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:card, title: nil)
   }
 
   describe "GET /index" do

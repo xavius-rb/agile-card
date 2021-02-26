@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
-
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.1.0'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -11,16 +9,10 @@ gem 'webpacker'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'redis'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 gem 'bootsnap', require: false
 
 gem 'sidekiq'
-#gem 'xavius-core', path: '/root/gems/xavius/xavius-core'
+gem 'jsonapi-serializer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -31,6 +23,7 @@ group :development, :test do
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'pry'
 end
 
 group :development do
